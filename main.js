@@ -265,6 +265,8 @@
 
   var el = document.querySelector(".bidenwrap");
 
+  var first = true;
+
   var scheduled = false,
       lastEvent;
 
@@ -272,23 +274,27 @@
     lastEvent = event;
     if (!scheduled) {
       scheduled = true;
+      var time = first ? 4000 : 2000;
       root.setTimeout(function() {
         scheduled = false;
         displayBiden(lastEvent);
-      }, 1000);
+        first = false;
+      }, time);
     }
   });
 
-  el.addEventListener("click", function() {
-    var images = document.querySelectorAll("img");
-    for (var i = 0; i < images.length; i++) {
-      images[i].remove();
-    }    
-  })
+  if (!isTouchDevice()) {
+    el.addEventListener("click", function() {
+      var images = document.querySelectorAll("img");
+      for (var i = 0; i < images.length; i++) {
+        images[i].remove();
+      }
+    });
+  }
 
   function displayBiden(e) {
     var img = document.createElement("img");
-    var biden = bidenCoords[randomInt(1, 87)];
+    var biden = bidenCoords[randomInt(0, 86)];
     var pos = [e.clientX, e.clientY];
 
     img.style.top = pos[1] + "px";
@@ -304,6 +310,10 @@
 
   function randomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
+  }
+
+  function isTouchDevice(){
+    return true == ("ontouchstart" in window || window.DocumentTouch && document instanceof DocumentTouch);
   }
 
 })(this);
