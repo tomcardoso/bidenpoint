@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Biden Point</title>
+    <style media="screen">
+      html, body {
+        margin: 0;
+        overflow: hidden;
+        font-size: 50px;
+      }
+      .bidenwrap {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #c3c3c3;
+      }
+      .biden {
+        position: absolute;
+      }
+      .cursor {
+        width: 10px;
+        height: 10px;
+        background: red;
+        position: absolute;
+      }
+      .instructions {
+        width: 40vw;
+        margin: 0 auto;
+        position: relative;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+      }
+      h1, h2 {
+        font-family: "Helvetica Neue", Helvetica, sans-serif;
+        font-size: 1em;
+        letter-spacing: -1px;
+        opacity: 0.25;
+        line-height: 1;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        text-transform: uppercase;
+        font-size: 1.5em;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bidenwrap">
+      <div class="instructions">
+        <h1>Biden Point</h1>
+        <h2>How to use: just move your cursor around and stop it when you&rsquo;re ready for a cuppa Joe.<br>Click to clear.</h2>
+        <p></p>
+      </div>
+    </div>
+  </body>
+
+  <script src="./main.js" charset="utf-8"></script>
+</html>
